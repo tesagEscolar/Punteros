@@ -45,21 +45,21 @@ string a_minusculas(string cadena) {
   return cadena;
 }
 
-int main() {
-  int clave;
-  string mensaje, cifrado, descifrado;
-  cout << "Ingrese la clave (un número primo): ";
-  cin >> clave;
-  if (!es_primo(clave)) {
-    cout << "La clave debe ser un número primo." << endl;
-    return 1;
-  }
-  cin.ignore();
-  cout << "Ingrese el mensaje: ";
-  getline(cin, mensaje);
-  cifrado = cifrar(a_minusculas(mensaje), clave);
-  cout << "Mensaje cifrado: " << cifrado << endl;
-  descifrado = descifrar(cifrado, clave);
-  cout << "Mensaje descifrado: " << descifrado << endl;
-  return 0;
-}
+// int main() {
+//   int clave;
+//   string mensaje, cifrado, descifrado;
+//   cout << "Ingrese la clave (un número primo): ";
+//   cin >> clave;
+//   if (!es_primo(clave)) {
+//     cout << "La clave debe ser un número primo." << endl;
+//     return 1;
+//   }
+//   cin.ignore();
+//   cout << "Ingrese el mensaje: ";
+//   getline(cin, mensaje);
+//   cifrado = cifrar(a_minusculas(mensaje), clave);
+//   cout << "Mensaje cifrado: " << cifrado << endl;
+//   descifrado = descifrar(cifrado, clave);
+//   cout << "Mensaje descifrado: " << descifrado << endl;
+//   return 0;
+// }
