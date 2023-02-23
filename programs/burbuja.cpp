@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void leer_arreglo(int *arreglo, int n) {
+void leerArreglo(int *arreglo, int n) {
     for (int i = 0; i < n; i++) {
         cout << "Ingrese el elemento " << i << " del arreglo: ";
         cin >> *(arreglo + i);
@@ -16,19 +16,19 @@ void burbuja(int *arr, int n){
         *(arr + j)^=*(arr + j + 1)^(*(arr + j + 1)=*(arr + j));
 }
 
-void imprimir_arreglo(int arr[]) {
+void imprimirArreglo(int arr[]) {
     for (int i = 0; arr[i]; i++)
         cout << arr[i] << ", ";
     cout<<endl;
 }
 
-// int main() {
-//     int arreglo[10];
-//     leer_arreglo(arreglo, 10);
-//     cout<<"Arreglo Original: ";
-//     imprimir_arreglo(arreglo);
-//     burbuja(arreglo, 10);
-//     cout<<"Arreglo Ordenado: ";
-//     imprimir_arreglo(arreglo);
-//     return 0;
-// }
+int main() {
+     int arreglo[10];
+     leerArreglo(arreglo, 10);
+     cout<<"Arreglo Original: ";
+     imprimirArreglo(arreglo);
+     burbuja(arreglo, 10);
+     cout<<"Arreglo Ordenado: ";
+     imprimirArreglo(arreglo);
+     return 0;
+ }
