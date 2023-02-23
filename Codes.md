@@ -12,14 +12,14 @@ using namespace std;
 
 
 
-string a_mayus(string str) {
+string aMayus(string str) {
   for (int i = 0; str[i]; i++)
     str[i] = str[i] >= 'a' && str[i] <= 'z' ? str[i] - 32 : str[i];
 
   return str;
 }
 
-string a_minus(string str) {
+string aMinus(string str) {
   for (int i = 0; str[i]; i++)
     str[i] = str[i] >= 'A' && str[i] <= 'Z' ? str[i] + 32 : str[i];
 
@@ -31,9 +31,9 @@ int main() {
     cout << "Ingrese una cadena de texto: ";
     getline(cin, cadena);
 
-    cout << "Cadena en minúsculas: " << a_minus(cadena) << endl;
+    cout << "Cadena en minúsculas: " << aMinus(cadena) << endl;
 
-    cout << "Cadena en mayúsculas: " << a_mayus(cadena) << endl;
+    cout << "Cadena en mayúsculas: " << aMayus(cadena) << endl;
 
     return 0;
 }
@@ -50,7 +50,7 @@ int main() {
 
 using namespace std;
 
-bool es_primo(int n) {
+bool esPrimo(int n) {
   if (n <= 1)
     return false;
 
@@ -84,7 +84,7 @@ string descifrar(string cifrado, int clave) {
   return mensaje;
 }
 
-string a_minusculas(string cadena) {
+string aMinusculas(string cadena) {
   for (int i = 0; cadena[i]; i++)
     cadena[i] = cadena[i] >= 'A' && cadena[i] <= 'Z' ? cadena[i] + 32 : cadena[i];
 
@@ -96,14 +96,14 @@ int main() {
   string mensaje, cifrado, descifrado;
   cout << "Ingrese la clave (un número primo): ";
   cin >> clave;
-  if (!es_primo(clave)) {
+  if (!esPrimo(clave)) {
     cout << "La clave debe ser un número primo." << endl;
     return 1;
   }
   cin.ignore();
   cout << "Ingrese el mensaje: ";
   getline(cin, mensaje);
-  cifrado = cifrar(a_minusculas(mensaje), clave);
+  cifrado = cifrar(aMinusculas(mensaje), clave);
   cout << "Mensaje cifrado: " << cifrado << endl;
   descifrado = descifrar(cifrado, clave);
   cout << "Mensaje descifrado: " << descifrado << endl;
@@ -121,7 +121,7 @@ int main() {
 
 using namespace std;
 
-void leer_arreglo(int *arreglo, int n) {
+void leerArreglo(int *arreglo, int n) {
     for (int i = 0; i < n; i++) {
         cout << "Ingrese el elemento " << i << " del arreglo: ";
         cin >> *(arreglo + i);
@@ -135,7 +135,7 @@ void burbuja(int *arr, int n){
         *(arr + j)^=*(arr + j + 1)^(*(arr + j + 1)=*(arr + j));
 }
 
-void imprimir_arreglo(int arr[]) {
+void imprimirArreglo(int arr[]) {
     for (int i = 0; arr[i]; i++)
         cout << arr[i] << ", ";
     cout<<endl;
@@ -143,12 +143,12 @@ void imprimir_arreglo(int arr[]) {
 
 int main() {
     int arreglo[10];
-    leer_arreglo(arreglo, 10);
+    leerArreglo(arreglo, 10);
     cout<<"Arreglo Original: ";
-    imprimir_arreglo(arreglo);
+    imprimirArreglo(arreglo);
     burbuja(arreglo, 10);
     cout<<"Arreglo Ordenado: ";
-    imprimir_arreglo(arreglo);
+    imprimirArreglo(arreglo);
     return 0;
 }
 ```
