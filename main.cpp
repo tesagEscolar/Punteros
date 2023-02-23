@@ -4,7 +4,7 @@
 
 using namespace std;
 
-bool es_primo(int n) {
+bool esPrimo(int n) {
   if (n <= 1)
     return false;
 
@@ -38,28 +38,28 @@ string descifrar(string cifrado, int clave) {
   return mensaje;
 }
 
-string a_minusculas(string cadena) {
+string aMinusculas(string cadena) {
   for (int i = 0; cadena[i]; i++)
     cadena[i] = cadena[i] >= 'A' && cadena[i] <= 'Z' ? cadena[i] + 32 : cadena[i];
 
   return cadena;
 }
 
-// int main() {
-//   int clave;
-//   string mensaje, cifrado, descifrado;
-//   cout << "Ingrese la clave (un número primo): ";
-//   cin >> clave;
-//   if (!es_primo(clave)) {
-//     cout << "La clave debe ser un número primo." << endl;
-//     return 1;
-//   }
-//   cin.ignore();
-//   cout << "Ingrese el mensaje: ";
-//   getline(cin, mensaje);
-//   cifrado = cifrar(a_minusculas(mensaje), clave);
-//   cout << "Mensaje cifrado: " << cifrado << endl;
-//   descifrado = descifrar(cifrado, clave);
-//   cout << "Mensaje descifrado: " << descifrado << endl;
-//   return 0;
-// }
+int main() {
+  int clave;
+  string mensaje, cifrado, descifrado;
+  cout << "Ingrese la clave (un número primo): ";
+  cin >> clave;
+  if (!esPrimo(clave)) {
+    cout << "La clave debe ser un número primo." << endl;
+    return 1;
+  }
+  cin.ignore();
+  cout << "Ingrese el mensaje: ";
+  getline(cin, mensaje);
+  cifrado = cifrar(aMinusculas(mensaje), clave);
+  cout << "Mensaje cifrado: " << cifrado << endl;
+  descifrado = descifrar(cifrado, clave);
+  cout << "Mensaje descifrado: " << descifrado << endl;
+  return 0;
+}
